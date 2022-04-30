@@ -1,4 +1,4 @@
-import styled,{keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,7 +26,11 @@ const animation = keyframes`
     border-radius: 0px;
   }
 `;
- 
+
+const Emoji = styled.span`
+  font-size: 36px;
+`;
+
 const Box = styled.div`
   height : 200px;
   width : 200px;
@@ -37,13 +41,10 @@ const Box = styled.div`
   // align-items 세로 축을 기준으로 정렬을 하게 됩니다.
   align-items: center;
   animation: ${animation} 1s linear infinite;
-  span{
-    font-size: 36px;
+  ${Emoji}{
+    
     &:hover{
-      font-size: 46px;
-    }
-    &:active{
-      opacity:0;
+      font-size: 98px;
     }
   }
 `;
@@ -53,8 +54,9 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😍</span>
-        </Box>
+        <Emoji as="p">😍</Emoji>
+      </Box>
+        <Emoji as="p">🐄</Emoji>
     </Wrapper>
   );
 }
